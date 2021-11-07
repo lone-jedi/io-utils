@@ -1,6 +1,6 @@
 package com.yarkin.file;
 
-import java.io.File;
+import java.io.*;
 import java.nio.file.NotDirectoryException;
 
 public class FileManager {
@@ -34,23 +34,55 @@ public class FileManager {
         int totalDirectories = 0;
         for (File f : file.listFiles()) {
             if(f.isDirectory()) {
-                totalDirectories += countDirs(f.getPath()) + 1;
+                totalDirectories += countDirs(f.getAbsolutePath()) + 1;
             }
         }
 
         return totalDirectories;
     }
 
-    public static void copy(String from, String to) {
+    public static void copy(String from, String to) throws IOException {
+        File fileFrom = new File(from);
+        File fileTo = new File(to);
+        fileTo.mkdir();
 
+        for (File f : fileFrom.listFiles()) {
+            if(f.isDirectory()) {
+                copy(f.getAbsolutePath(), fileTo.getAbsolutePath() + "\\" + f.getName());
+            } else {
+                File newFile = new File(fileTo.getAbsolutePath()  + "\\" + f.getName());
+                newFile.createNewFile();
+                copyFileContent(f, newFile);
+            }
+        }
     }
 
-    public static void move(String from, String to) {
+    public static void copyFileContent(File from, File to) throws IOException {
+        OutputStream output = new FileOutputStream(to);
+        InputStream input  = new FileInputStream(from);
+
+        int current;
+        while((current = input.read()) != -1) {
+            output.write(current);
+        }
+
+        output.close();
+        input.close();
+    }
+
+    public static void move(String from, String to) throws IOException {
         copy(from, to);
         delete(from);
     }
 
     public static void delete(String path) {
-
+        File file = new File(path);
+        for (File f : file.listFiles()) {
+            if(f.isDirectory()) {
+                delete(f.getAbsolutePath());
+            }
+            f.delete();
+        }
+        file.delete();
     }
 }

@@ -3,6 +3,9 @@ package com.yarkin.file;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.NotDirectoryException;
 
 public class FileManagerTest {
@@ -87,5 +90,16 @@ public class FileManagerTest {
         });
     }
 
+    /////////////////
 
+    @Test
+    public void testCopy() throws IOException {
+        FileManager.copy(TestDirectory.COPY_FROM.toString(), TestDirectory.COPY_TO.toString());
+
+    }
+
+    @Test
+    public void testDelete() throws IOException {
+        FileManager.delete(TestDirectory.COPY_TO.toString());
+    }
 }
