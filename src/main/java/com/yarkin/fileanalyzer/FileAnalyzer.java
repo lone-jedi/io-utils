@@ -84,7 +84,6 @@ public class FileAnalyzer {
                 if(isSearched) {
                     String currentSentence = getSubstring(new FileInputStream(file), lastDelimiter + 1, i - lastDelimiter + 1);
                     isSearched = false;
-                    totalMatches++;
                     result.add(clear(currentSentence));
                 }
                 lastDelimiter = i;
@@ -98,6 +97,7 @@ public class FileAnalyzer {
                     continue;
                 }
                 if(possibleValue.equals(searchedValue)) {
+                    totalMatches++;
                     isSearched = true;
                 }
             }
