@@ -2,7 +2,6 @@ package com.yarkin.fileanalyzer;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.StringJoiner;
 
 public class FileAnalyzer {
     private int totalMatches;
