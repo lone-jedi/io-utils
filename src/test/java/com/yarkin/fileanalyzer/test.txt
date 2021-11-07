@@ -1,0 +1,7 @@
+Start.
+Some sentence?
+Middle.
+
+JUnit is the powerful testing framework!
+
+End.
