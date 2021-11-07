@@ -3,6 +3,8 @@ package com.yarkin.fileanalyzer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +14,9 @@ public class FileAnalyzerTest {
 
     private final File testFile = new File(
             "C:\\Users\\alexa\\OneDrive\\Documents\\campus\\io-utils\\src\\test\\java\\com\\yarkin\\fileanalyzer\\test.txt");
+
+    private final File emptyFile = new File(
+            "C:\\Users\\alexa\\OneDrive\\Documents\\campus\\io-utils\\src\\test\\java\\com\\yarkin\\fileanalyzer\\empty.txt");
 
     @BeforeEach
     public void before() {
@@ -66,5 +71,12 @@ public class FileAnalyzerTest {
         ArrayList<String> actual = fileAnalyzer.getMatches("End");
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetMatchesFromEmptyFile() throws IOException {
+        FileAnalyzer fileAnalyzer = new FileAnalyzer(emptyFile);
+        ArrayList<String> actual = fileAnalyzer.getMatches("test");
+        assertTrue(actual.isEmpty());
     }
 }
