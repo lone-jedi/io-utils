@@ -1,6 +1,9 @@
 package com.yarkin.fileanalyzer;
 
-import java.io.*;
+import java.io.InputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 
 public class FileAnalyzer {
