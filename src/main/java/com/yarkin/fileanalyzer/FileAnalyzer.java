@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 
 public class FileAnalyzer {
-    private int totalMatches;
+    private int lastTotalMatches;
     private File file;
 
     public static void main(String... args) throws IOException {
@@ -53,8 +53,8 @@ public class FileAnalyzer {
         this.file = file;
     }
 
-    public int getTotalMatches() {
-        return totalMatches;
+    public int getLastTotalMatches() {
+        return lastTotalMatches;
     }
 
     public File getFileName() {
@@ -67,13 +67,13 @@ public class FileAnalyzer {
             System.out.println(sentence);
         }
 
-        System.out.println("TOTAL: " + totalMatches);
+        System.out.println("TOTAL: " + lastTotalMatches);
 
     }
 
     public ArrayList<String> getMatches(String searchedValue) throws IOException {
         ArrayList<String> result = new ArrayList<>();
-        totalMatches = 0;
+        lastTotalMatches = 0;
         InputStream input = new FileInputStream(file);
         int lastDelimiter = -1;
         boolean isSearched = false;
@@ -97,7 +97,7 @@ public class FileAnalyzer {
                     continue;
                 }
                 if(possibleValue.equals(searchedValue)) {
-                    totalMatches++;
+                    lastTotalMatches++;
                     isSearched = true;
                 }
             }
