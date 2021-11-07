@@ -1,4 +1,4 @@
-package com.yarkin.fileanalyzer;
+package com.yarkin.file;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,15 +12,9 @@ import java.util.ArrayList;
 public class FileAnalyzerTest {
     private FileAnalyzer fileAnalyzer;
 
-    private final File testFile = new File(
-            "C:\\Users\\alexa\\OneDrive\\Documents\\campus\\io-utils\\src\\test\\java\\com\\yarkin\\fileanalyzer\\test.txt");
-
-    private final File emptyFile = new File(
-            "C:\\Users\\alexa\\OneDrive\\Documents\\campus\\io-utils\\src\\test\\java\\com\\yarkin\\fileanalyzer\\empty.txt");
-
     @BeforeEach
     public void before() {
-        fileAnalyzer = new FileAnalyzer(testFile);
+        fileAnalyzer = new FileAnalyzer(new File(TestFile.ASCII.toString()));
     }
 
     @Test
@@ -76,7 +70,7 @@ public class FileAnalyzerTest {
 
     @Test
     public void testGetMatchesFromEmptyFile() throws IOException {
-        FileAnalyzer fileAnalyzer = new FileAnalyzer(emptyFile);
+        FileAnalyzer fileAnalyzer = new FileAnalyzer(new File(TestFile.EMPTY.toString()));
         ArrayList<String> actual = fileAnalyzer.getMatches("test");
         assertTrue(actual.isEmpty());
     }

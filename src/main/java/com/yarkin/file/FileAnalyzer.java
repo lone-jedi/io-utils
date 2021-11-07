@@ -1,4 +1,4 @@
-package com.yarkin.fileanalyzer;
+package com.yarkin.file;
 
 import java.io.InputStream;
 import java.io.File;
