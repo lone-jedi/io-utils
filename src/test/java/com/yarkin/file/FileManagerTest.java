@@ -45,4 +45,47 @@ public class FileManagerTest {
             FileManager.countFiles(TestFile.ASCII.toString());
         });
     }
+
+    ////////////////
+
+    @Test
+    public void testCountDirsWithOnlyDirectories() throws NotDirectoryException {
+        int expected = 7;
+        int actual = FileManager.countDirs(TestDirectory.ONLY_DIRECTORIES.toString());
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCountDirsWithOnlyFiles() throws NotDirectoryException {
+        int expected = 0;
+        int actual = FileManager.countDirs(TestDirectory.ONLY_FILES.toString());
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCountDirsInEmptyDirectory() throws NotDirectoryException {
+        int expected = 0;
+        int actual = FileManager.countDirs(TestDirectory.EMPTY.toString());
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCountDirs() throws NotDirectoryException {
+        int expected = 7;
+        int actual = FileManager.countDirs(TestDirectory.WITH_FILES.toString());
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCountDirsWhenThisIsNotDirectory() {
+        assertThrows(NotDirectoryException.class, () -> {
+            FileManager.countDirs(TestFile.ASCII.toString());
+        });
+    }
+
+
 }
