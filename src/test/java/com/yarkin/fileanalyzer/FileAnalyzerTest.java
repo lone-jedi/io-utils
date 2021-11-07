@@ -24,7 +24,7 @@ public class FileAnalyzerTest {
     }
 
     @Test
-    public void testGetMatchesFromStartSentence() throws IOException {
+    public void testGetMatchesFromStartSentenceAndTotalMatches() throws IOException {
         ArrayList<String> expected = new ArrayList<>();
         expected.add("Start.");
         expected.add("Some sentence?");
@@ -33,6 +33,7 @@ public class FileAnalyzerTest {
         ArrayList<String> actual = fileAnalyzer.getMatches("t");
 
         assertEquals(expected, actual);
+        assertEquals(7, fileAnalyzer.getLastTotalMatches());
     }
 
     @Test
