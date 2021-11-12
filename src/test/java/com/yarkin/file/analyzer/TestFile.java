@@ -1,8 +1,8 @@
 package com.yarkin.file;
 
 public enum TestFile {
-    ASCII("src/test/java/com/yarkin/file/testfiles/test.txt"),
-    EMPTY("src/test/java/com/yarkin/file/testfiles/empty.txt");
+    ASCII("src/test/resources/filemanager/testfiles/test.txt"),
+    EMPTY("src/test/resources/filemanager/testfiles/empty.txt");
 
     private String path;
 
