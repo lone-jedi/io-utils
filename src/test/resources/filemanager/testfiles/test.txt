@@ -1,7 +1,1 @@
-Start.
-Some sentence?
-Middle.
-
-JUnit is the powerful testing framework!
-
-End.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacus nisl, posuere eu tincidunt ac, lobortis sed orci. Curabitur commodo sagittis ornare. Nullam at leo blandit, maximus arcu a, lacinia nisi. Donec posuere ante euismod iaculis consectetur. Proin cursus nisi fringilla convallis imperdiet. Phasellus a accumsan elit, vitae congue felis. Integer nec justo nunc. Suspendisse sem libero, iaculis eu metus vel, blandit sagittis massa. Vestibulum tincidunt luctus lectus, eget sodales dolor. Praesent felis leo, tincidunt vitae tellus ac, hendrerit interdum quam. Nulla a massa dignissim, condimentum enim malesuada, convallis nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas gravida ut nunc ut pharetra.

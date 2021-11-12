@@ -1,12 +1,12 @@
 package com.yarkin.file;
 
 public enum TestDirectory {
-    ONLY_DIRECTORIES("src/test/java/com/yarkin/file/testdirs"),
-    WITH_FILES("src/test/java/com/yarkin/file/dirswithfiles"),
-    ONLY_FILES("src/test/java/com/yarkin/file/testfiles"),
-    COPY_FROM("src/test/java/com/yarkin/file/testcopy/from"),
-    COPY_TO("src/test/java/com/yarkin/file/testcopy/to"),
-    EMPTY("src/test/java/com/yarkin/file/emptydir");
+    ONLY_DIRECTORIES("src/test/resources/filemanager/testdirs"),
+    WITH_FILES("src/test/resources/filemanager/dirswithfiles"),
+    ONLY_FILES("src/test/resources/filemanager/testfiles"),
+    COPY_FROM("src/test/resources/filemanager/testcopy/from"),
+    COPY_TO("src/test/resources/filemanager/testcopy/to"),
+    EMPTY("src/test/resources/filemanager/emptydir");
 
     private String path;
 

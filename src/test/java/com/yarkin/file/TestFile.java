@@ -1,4 +1,4 @@
-package com.yarkin.file.analyzer;
+package com.yarkin.file;
 
 public enum TestFile {
     ASCII("src/test/resources/filemanager/testfiles/test.txt"),

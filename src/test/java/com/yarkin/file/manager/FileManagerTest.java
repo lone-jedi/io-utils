@@ -1,10 +1,10 @@
-package com.yarkin.file;
+package com.yarkin.file.manager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.yarkin.file.analyzer.TestFile;
-import com.yarkin.file.manager.FileManager;
+import com.yarkin.file.TestDirectory;
+import com.yarkin.file.TestFile;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
