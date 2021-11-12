@@ -42,12 +42,11 @@ public class Program {
         }
 
         FileAnalyzer fileAnalyzer = new FileAnalyzer(file);
-        // ArrayList<String> matchSentences = fileAnalyzer.getMatches(searchedValue);
-        // int countMatches = fileAnalyzer.getCountOfMatches(searchedValue);
+        FileData fileData = fileAnalyzer.analyze(searchedValue);
 
         System.out.println("---- Sentences with \"" + searchedValue + "\" ----");
-        // printSentences(matchSentences);
-        // System.out.println("TOTAL NUMBER OF MATCHES: " + countMatches);
+        printSentences(fileData.getMatchSentences());
+        System.out.println("TOTAL NUMBER OF MATCHES: " + fileData.getNumberOfMatches());
     }
 
     public static void printSentences(ArrayList<String> sentences) {
