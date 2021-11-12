@@ -1,4 +1,4 @@
-package com.yarkin.file;
+package com.yarkin.file.manager;
 
 import java.io.*;
 import java.nio.file.NotDirectoryException;
