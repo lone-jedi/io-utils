@@ -2,6 +2,10 @@ package com.yarkin.file;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import com.yarkin.file.analyzer.TestFile;
+import com.yarkin.file.manager.FileManager;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -9,6 +13,23 @@ import java.io.IOException;
 import java.nio.file.NotDirectoryException;
 
 public class FileManagerTest {
+
+    @BeforeAll
+    public static void initialize() {
+        // Create empty directory
+        new File(TestDirectory.EMPTY.toString()).mkdirs();
+
+        // Create directory with empty directories
+        File directoryA = new File(TestDirectory.ONLY_DIRECTORIES.toString(), "a");
+        directoryA.mkdirs();
+        new File(directoryA, "a1").mkdirs();
+        new File(directoryA, "a2").mkdirs();
+        File directoryA3 = new File(directoryA, "a3");
+        directoryA3.mkdirs();
+        new File(directoryA3, "a31").mkdirs();
+        new File(TestDirectory.ONLY_DIRECTORIES.toString(), "b").mkdirs();
+        new File(TestDirectory.ONLY_DIRECTORIES.toString(), "c").mkdirs();
+    }
 
     @Test
     public void testCountFilesWithOnlyDirectories() throws NotDirectoryException {
