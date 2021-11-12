@@ -2,13 +2,10 @@ package com.yarkin.file.analyzer;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class FileAnalyzer {
 
     private File file;
-
-    public FileAnalyzer() {}
 
     public FileAnalyzer(File file) {
         this.file = file;
@@ -98,5 +95,4 @@ public class FileAnalyzer {
         input.close();
         return new String(fileBytes);
     }
-
 }
